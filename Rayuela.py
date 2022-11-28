@@ -64,34 +64,26 @@ def escogerJugador():
             return escogerJugador()
     return jugadorEscogido
 
-def rayuela():
-    print ("jugador: " + escogerJugador())
+def rayuela(jugador):
+    print ("jugador: " + jugador)
     posicion = 2
     while (posicion != 1):
-        print ("opcion 1: afuera")
-        print ("opcion 2: adentro")
-        posicion = int (input ())
-    print ("La piedra del jugador" + escogerJugador() + "cayo en la parte de: " + posicion)
-
-    cuadro = 1
-    while (cuadro != 1):
-        print ("opcion 1: cuadro 1")
-        print ("opcion 2: cuadro 2")
-        cuadro = int (input())
-    print ("la piedra cayo en el cuadro: " + cuadro)
-
-
-    return posicion, cuadro
+        print ("opcion 1: adentro")
+        print ("opcion 2: afuera ")
+        posicion = int (input ("Piedra adentro o afuera?  "))
+        print ("La piedra del jugador cayo en la parte de adentro")
 
 def ronda():
+    
     jugador1 = 0
     jugador2 = 0
     jugador3 = 0
     jugador4 = 0
     contador = 0
-    jugadorGlobal = escogerJugador()
-
     while(contador <= 10 ):
+        #rayuela(jugadorGlobal)
+        jugadorGlobal = escogerJugador()
+        
         if (jugadorGlobal == 'a'):
             jugador1 += 1
             if(jugador1 == 10):
@@ -131,4 +123,4 @@ if __name__ == '__main__':
         if(cantidadJugadores>4 or cantidadJugadores<2):
             print("Catidad de jugadores invalidos\n")
         else:
-            rayuela()
+            ronda()
