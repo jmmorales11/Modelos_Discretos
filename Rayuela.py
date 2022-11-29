@@ -1,4 +1,13 @@
-from random import *
+"""
+JUEGO TRADICIONAL DE LA RAYUELA
+La rayuela consiste en un juego el cual participan de 2 a 4 personas
+en este juego las instrucciones son muy simples 
+la primera regla es que la piedra caiga dentro de los cuadros a saltar
+si la piedra cae en la parte de afuera el jugador a perdido su turno
+la segunda es que si la piedra cae adentro el jugador debe saltar todos los cuadros en orden
+y al regreso debe recoger la piedra
+si la piedra cae afuera pasa al siguiente jugador y el que la lanzo pierde su turno
+"""
 
 def escogerJugador():
     """
@@ -11,15 +20,15 @@ def escogerJugador():
     Retorna:
     ------------
         jugadorEscogido : string
-            valor contiene el jugador que realizo primero el reto
+            valor contiene a los jugadores que realizaron e juego
 
     """
     #realizamos el menu correspondiente a la cantidad de jugadores en este caso 2
     if(cantidadJugadores==2):
         #Presentamos los jugadores en juego
-        print("Ingrese el jugador que jugara primero ")
+        print("Ingrese el jugador que jugara este turno ")
         print("escoge a para:  Jugador A")
-        print("escoge a para:  Jugador B")
+        print("escoge b para:  Jugador B")
         #ingresamos el jugador que que jugara primero
         jugadorEscogido=input("Seleccione:  ")
         #comparamos si el jugador esta dentro del rango permitido 
@@ -32,7 +41,7 @@ def escogerJugador():
      #realizamos el menu correspondiente a la cantidad de jugadores en este caso 3
     elif(cantidadJugadores==3):
         #Presentamos los jugadores en juego
-        print("Ingrese el jugador que jugara primero ")
+        print("Ingrese el jugador que jugara este turno ")
         print("escoge a para:  Jugador A")
         print("escoge b para:  Jugador B")
         print("escoge c para:  Jugador C")
@@ -48,7 +57,7 @@ def escogerJugador():
     #realizamos el menu correspondiente a la cantidad de jugadores en este caso 4
     elif(cantidadJugadores==4):
         #Presentamos los jugadores en juego
-        print("Ingrese el jugador que jugara primero ")
+        print("Ingrese el jugador que jugara este turno ")
         print("escoge a para:  Jugador A")
         print("escoge b para:  Jugador B")
         print("escoge c para:  Jugador C")
@@ -64,49 +73,48 @@ def escogerJugador():
             return escogerJugador()
     return jugadorEscogido
 
-def rayuela(jugador):
+def rayuela():
+    """
+    Es una funcion la cual utiliza la variable global "rayuela", para poder ingresar los datos que cada concursante realizo
+    con la posicion de la piedra la cual seria si es adentro o afuera
+    Parametros:
+    ----------------
+        no tiene parametros de entrada
+
+    Retorna:
+    ----------------
+        posicion: int
+            contiene dos enteros para saber la posicion de la piedra
+                1: adentro, 2: afuera
+    """
+# inicializamosm a jugador con el jugador escogido
+    jugador = escogerJugador()
+    #imprimimos el jugador escogido
     print ("jugador: " + jugador)
+    #inicializamos la posicion de la piedra
     posicion = 2
-    while (posicion != 1):
-        print ("opcion 1: adentro")
-        print ("opcion 2: afuera ")
-        posicion = int (input ("Piedra adentro o afuera?  "))
-        print ("La piedra del jugador cayo en la parte de adentro")
+    #damos las opciones a elegir al juez
+    print ("opcion 1: adentro")
+    print ("opcion 2: afuera ")
+    #ingresamos en que posicion cayo la piedra adentro que es 1 o afuera que es 2
+    posicion = int (input ("La piedra cayo adentro o afuera?  " '\n'))
+    # comparamos si la piedra cayo en la parte de afuera
+    if posicion == 2:
+        #imprimimos el mensaje de que el jugador pierde el turno
+        print("el jugador "+ jugador + " perdido su turno " '\n')
+        #llamamos a la funcion escoger jugador y rayuela para hacer una repeticion y seguir conotro jugador
+        escogerJugador()
+        rayuela()
+    # comparamos si la piedra cayo en la parte de adentro
+    if posicion == 1:
+        #imprimimos el mensaje de que el jugador puede seguir jugando hasta terminar el juego recogiendo la piedra que lanzo
+        print("el jugador " + jugador + " sigue jugando y saltara hasta el final recogiendo su piedra ")
+        escogerJugador()
+        rayuela()
+    #retornamos el valor de posicion 
+    return posicion 
 
-def ronda():
-    
-    jugador1 = 0
-    jugador2 = 0
-    jugador3 = 0
-    jugador4 = 0
-    contador = 0
-    while(contador <= 10 ):
-        #rayuela(jugadorGlobal)
-        jugadorGlobal = escogerJugador()
-        
-        if (jugadorGlobal == 'a'):
-            jugador1 += 1
-            if(jugador1 == 10):
-                print("El jugador a ha ganado")
-                break
-        elif (jugadorGlobal == 'b'):
-            jugador2 += 1
-            if(jugador2 == 10):
-                print("El jugador b ha ganado")
-                break
-        elif (jugadorGlobal == 'c'):
-            jugador3 += 1
-            if(jugador3 == 10):
-                print("El jugador c ha ganado")
-                break
-        elif (jugadorGlobal == 'd'):
-            jugador4 += 1
-            if(jugador4 == 10):
-                print("El jugador d ha ganado")
-                break
-    contador = contador + 1
-
-
+# funcion principal del juego
 if __name__ == '__main__':
     #Declaramos una variable global
     cantidadJugadores=0
@@ -123,4 +131,5 @@ if __name__ == '__main__':
         if(cantidadJugadores>4 or cantidadJugadores<2):
             print("Catidad de jugadores invalidos\n")
         else:
-            ronda()
+            rayuela()
+
