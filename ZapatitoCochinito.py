@@ -23,11 +23,21 @@ def caratula():
     #Se imprime la caratula de Bienvenida al juego
     print("\n","-"*25, "Bienvenido a Zapatito Cochinito","-"*25) 
     #Imprime indicaciones sobre la cantidad de numero de jugadores 
-    print("Al ingresar el numero de jugadores este debe ser minimo de 2 y maximo de 5 jugadores")
+    print("Al ingresar el numero de jugadores este debe ser minimo de 2 y maximo de 4 jugadores")
     #A la variable numeroJugadores se le asigna el valor de un numero entero que se le solicita al usuario para la cantidad de jugadores 
-    numeroJugadores= int(input ("\nIngresa el numero de Jugadores: "))
+    numeroJugadores= input ("\nIngresa el numero de Jugadores: ")
+    validacion=True
+    
+    while validacion == True:
+        if numeroJugadores.isalpha():
+            numeroJugadores=input('Has ingresado una letra, por favor ingresa un numero del 2 al 4: ')
+            validacion= True
+            
+        else: 
+            validacion= False
+    numeroJugadores = int (numeroJugadores)
     #Se crea un ciclo repetitivo while para la validacion de que el valor debe ser mayor que 1
-    while numeroJugadores<1 :
+    while numeroJugadores<2 :
         #implime si no se cumple la funcion while 
         print("No puede ser numeros menores que 2")
         #Se le vuelve a pedir al usuario que ingrese nuevamente la cantidad de jugadores
@@ -38,6 +48,7 @@ def caratula():
         print("No puede ser numeros mayores que 4")
         #Se le vuelve a pedir al usuario que ingrese nuevamente la cantidad de jugadores 
         numeroJugadores = int(input("Ingresa nuevamente el numero de Jugadores: "))
+
     #Se imprime el numero de jugadores
     print("\nHas ingresado "+ str (numeroJugadores) +" jugadores")
     #imprime que se esta comenzando el juego 
@@ -95,6 +106,8 @@ def contar(jugadores):
     if jugadores == ['jugador1', 'jugador2']:
         #imprime que el jugador debe cambiar de pie
         print('jugador 2 cambia de pie ')
+        #Se vuelve a cantar 
+        print("Zapa-tito cochi-nito, cam-bia de pie-ci-to, pero mi burrito dijo que me-jor lo cambiarias tu, nadie mas que tu !")
         #imprime que el jugador debe cambiar de pie
         print ('jugador 1 cambia de pie ')
         #imprime que al jugador que ha ganado
@@ -102,29 +115,49 @@ def contar(jugadores):
     elif jugadores == ['jugador1', 'jugador2', 'jugador3']:
         #imprime que el jugador debe cambiar de pie
         print('jugador 3 cambia de pie')
+        #Se vuelve a cantar 
+        print("Zapa-tito cochi-nito, cam-bia de pie-ci-to, pero mi burrito dijo que me-jor lo cambiarias tu, nadie mas que tu !")
         #imprime que el jugador debe cambiar de pie
         print('jugador 2 cambia de pie')
+        #Se vuelve a cantar 
+        print("Zapa-tito cochi-nito, cam-bia de pie-ci-to, pero mi burrito dijo que me-jor lo cambiarias tu, nadie mas que tu !")
         #imprime que el jugador debe cambiar de pie
         print('jugador 1 cambia de pie ')
+        #Se vuelve a cantar 
+        print("Zapa-tito cochi-nito, cam-bia de pie-ci-to, pero mi burrito dijo que me-jor lo cambiarias tu, nadie mas que tu !")
         #imprime que el jugador salio del juego
         print('jugador 3 sale' )
+        #Se vuelve a cantar 
+        print("Zapa-tito cochi-nito, cam-bia de pie-ci-to, pero mi burrito dijo que me-jor lo cambiarias tu, nadie mas que tu !")
         #imprime que el jugador salio del juego
         print('jugador 1 sale' )
         #imprime que al jugador que ha ganado
         print('Gana jugador 2')
-    elif jugadores == ('jugador1', 'jugador2','jugador3','jugador4'):
+    elif jugadores == ['jugador1', 'jugador2','jugador3','jugador4']:
         #imprime que el jugador debe cambiar de pie
         print('jugador 4 cambia de pie')
+        #Se vuelve a cantar 
+        print("Zapa-tito cochi-nito, cam-bia de pie-ci-to, pero mi burrito dijo que me-jor lo cambiarias tu, nadie mas que tu !")
         #imprime que el jugador debe cambiar de pie
         print('jugador 3 cambia de pie')
+        #Se vuelve a cantar 
+        print("Zapa-tito cochi-nito, cam-bia de pie-ci-to, pero mi burrito dijo que me-jor lo cambiarias tu, nadie mas que tu !")
         #imprime que el jugador debe cambiar de pie
         print('jugador 2 cambia de pie')
+        #Se vuelve a cantar 
+        print("Zapa-tito cochi-nito, cam-bia de pie-ci-to, pero mi burrito dijo que me-jor lo cambiarias tu, nadie mas que tu !")
         #imprime que el jugador debe cambiar de pie
         print('jugador 1 cambia de pie')
+        #Se vuelve a cantar 
+        print("Zapa-tito cochi-nito, cam-bia de pie-ci-to, pero mi burrito dijo que me-jor lo cambiarias tu, nadie mas que tu !")
         #imprime que el jugador salio del juego
         print('jugador 4 sale' )
+        #Se vuelve a cantar 
+        print("Zapa-tito cochi-nito, cam-bia de pie-ci-to, pero mi burrito dijo que me-jor lo cambiarias tu, nadie mas que tu !")
         #imprime que el jugador salio del juego       
         print('jugador 2 sale')
+        #Se vuelve a cantar 
+        print("Zapa-tito cochi-nito, cam-bia de pie-ci-to, pero mi burrito dijo que me-jor lo cambiarias tu, nadie mas que tu !")
         #imprime que el jugador salio del juego
         print('jugador 3 sale')
         #imprime que al jugador que ha ganado
