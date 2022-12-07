@@ -6,7 +6,7 @@ Autores:
 Jeimy Marley Morales Sosa
 
 Verisión:
-VER.1.1
+VER.1.2
 """
 def simonDice():
     """
@@ -14,11 +14,11 @@ def simonDice():
     cual realizo el reto, y escoger el jugador con mayor puntos acumulados
     Parametros:
     ------------
-    No tiene parametros de entrada
+        No tiene parametros de entrada
+    
     Retorna:
     ------------
-    No retorna Ningun valor
-
+        No retorna ningun valor
     """
     #Declaracion de un contador ronda, el cual va sumar 1 por cad ronda
     ronda=1
@@ -90,17 +90,19 @@ def simonDice():
         #En la variable ganador se guarda el valor del Jugador E
         ganador=jugadorE
     #Utilizamos el proceso ganadorJuego, para imprimir el ganador del juego
-    ganadorJuego(ganador,jugadorA,jugadorB,jugadorC,jugadorD,jugadorE )
+    ganadorJuego(ganador,jugadorA,jugadorB,jugadorC,jugadorD,jugadorE)
 
 def reto():
     """
     Es una funcion la cual nos permite ingresar el reto que el jugador debe realizar
     Parametros:
     ------------
-    No tiene parametros de entrada
+        No tiene parametros de entrada
+    
     Retorna:
     ------------
-    Si tiene valor de retorno, retorna el reto ingresado por el usuario
+        reto : string
+            valor que contiene el reto el cual debe realizar los jugadores
 
     """
     #Ingreso del reto el cual los jugadores deben realizar
@@ -115,10 +117,12 @@ def escogerJugador():
     con la cantidad de jugadores
     Parametros:
     ------------
-    No tiene parametros de entrada
+        No tiene parametros de entrada
+    
     Retorna:
     ------------
-    Si retorna valor, retorna el jugador escogido el cual realizo primero el reto
+        jugadorEscogido : string
+            valor contiene el jugador que realizo primero el reto
 
     """
     #comparamos la variable global con 2 para presentar el menu correspondiente a la cantidad de jugadores
@@ -196,17 +200,21 @@ def ganadorJuego(ganador,jugadorA,jugadorB,jugadorC,jugadorD,jugadorE ):
     de cada jugador, para presentar al jugador ganador
     Parametros:
     ------------
-    Si tiene parametros de entrada
-    ganador= valor que contiene el maximo de puntos echos por un jugador
-    jugadorA= valor que contiene los puntso echos por el jugador A
-    jugadorB= valor que contiene los puntso echos por el jugador B
-    jugadorC= valor que contiene los puntso echos por el jugador C
-    jugadorD= valor que contiene los puntso echos por el jugador D
-    jugadorE= valor que contiene los puntso echos por el jugador E
+        ganador : int 
+            valor que contiene el maximo de puntos echos por un jugador
+        jugadorA : int
+            valor que contiene los puntso echos por el jugador A
+        jugadorB : int
+            valor que contiene los puntso echos por el jugador B
+        jugadorC : int
+            valor que contiene los puntso echos por el jugador C
+        jugadorD : int
+            valor que contiene los puntso echos por el jugador D
+        jugadorE : 
+            valor que contiene los puntso echos por el jugador E
     Retorna:
     ------------
-    No retorna ningun valor
-
+        No retorna ningun valor
     """
     print("\n----------------Felicidades---------------------")
     #Comparamos el valor ganador con el valor del jugador A
